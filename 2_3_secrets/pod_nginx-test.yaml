@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-test
+spec:
+  containers:
+  - name: nginx-test-1
+    image: nginx:latest
+    command: ["/bin/sh", "-c", "env"]
+    env:
+      - name: DBUSER
+        valueFrom:
+          secretKeyRef:
+            name: mysecret
+            key: dbuser
+      - name: DBPASS
+        valueFrom:
+          secretKeyRef:
+            name: mysecret
+            key: dbpassword
