@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"kind":"Role","apiVersion":"rbac.authorization.k8s.io/v1","metadata":{"name":"job-inspector","namespace":"rbac","creationTimestamp":null},"rules":[{"verbs":["get","list"],"apiGroups":["batch"],"resources":["jobs"]}]}
+  creationTimestamp: null
+  name: job-inspector
+  namespace: rbac
+rules:
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - get
+  - list
