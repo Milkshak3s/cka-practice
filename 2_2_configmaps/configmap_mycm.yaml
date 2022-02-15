@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  owner: yourname
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: mycm
