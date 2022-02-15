@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: highmem
+  namespace: tenant-b-100mi
+spec:
+  containers:
+  - name: highmem
+    image: nginx:latest
+    resources:
+      requests:
+        memory: "150Mi"
