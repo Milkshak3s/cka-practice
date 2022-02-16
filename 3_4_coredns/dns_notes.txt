@@ -1,0 +1,1 @@
+check -n kube-system to find DNS solution, and ConfigMaps to find configuration information (generally, not solution for managed cluster in GKE
