@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  name: myingress
+spec:
+  ingressClassName: default
+  rules:
+  - host: myingress.mydomain
+    http:
+      paths:
+      - backend:
+          service:
+            name: main
+            port:
+              number: 80
+        path: /
+        pathType: Exact
+      - backend:
+          service:
+            name: api
+            port:
+              number: 8080
+        path: /api
+        pathType: Exact
+status:
+  loadBalancer: {}
